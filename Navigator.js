@@ -17,6 +17,10 @@ var LightboxNavigator = React.createClass({
     this.__defineGetter__('navigationContext', this._root._getNavigationContext);
   },
 
+  shouldComponentUpdate: function() {
+    return false;
+  },
+
   _configureSceneProxy: function(route) {
     if(route.type === 'LightboxImage') {
       return SceneConfigs.Lightbox;
